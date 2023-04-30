@@ -1,13 +1,32 @@
 import {DataTypes }from 'sequelize'
 import {db} from '../db'
 const Product = db.define('Product', {
-    userName: {
-
+    productName: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
-    email: {
-
+    brand: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },  
+    price: {
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
-    address: {
-
+    stock:{
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    sizes: {
+        type: DataTypes.ARRAY,
+        allowNull: false
+    },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    paid: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false
     }
 })

@@ -11,9 +11,14 @@ const User = db.define('User', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    address: {
+    password: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    active: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true
     }
 })
 
