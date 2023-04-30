@@ -62,5 +62,11 @@ export const deleteUser = async(req:Request,res: Response) => {
 
 
 export const updateUser = async(req:Request,res: Response) => {
-
+    try {
+        const user = await User.findByPk(req.body.id)
+        await user.update(req.body)
+        console.log(user)
+    } catch (error) {
+        console.log(error)
+    }
 }

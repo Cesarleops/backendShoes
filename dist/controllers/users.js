@@ -59,6 +59,14 @@ const deleteUser = async (req, res) => {
 };
 exports.deleteUser = deleteUser;
 const updateUser = async (req, res) => {
+    try {
+        const user = await User_1.default.findByPk(req.body.id);
+        await user.update(req.body);
+        console.log(user);
+    }
+    catch (error) {
+        console.log(error);
+    }
 };
 exports.updateUser = updateUser;
 //# sourceMappingURL=users.js.map
